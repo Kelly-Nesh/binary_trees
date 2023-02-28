@@ -11,21 +11,19 @@ binary_tree_t *binary_tree_node(binary_tree_t *parent, int value)
 {
 	binary_tree_t *newNode;
 	binary_tree_t *swap;
-	newNode = malloc(sizeof(binary_tree_t));
 
-	newNode->parent = NULL;
-	newNode->left = NULL;
-	newNode->right = NULL;
+	newNode = malloc(sizeof(binary_tree_t));
 	if (parent == NULL)
 	{
 		parent = newNode;
 		parent->n = value;
-		return parent;
+		return (parent);
 	}
 	else
 	{
 		swap = parent;
-		while (1){
+		while (1)
+		{
 			parent = swap;
 			if (value < parent->n)
 			{
@@ -35,7 +33,7 @@ binary_tree_t *binary_tree_node(binary_tree_t *parent, int value)
 					swap = newNode;
 					swap->parent = parent;
 					swap->n = value;
-					return swap;
+					return (swap);
 				}
 			}
 			else
@@ -46,7 +44,7 @@ binary_tree_t *binary_tree_node(binary_tree_t *parent, int value)
 					swap = newNode;
 					swap->parent = parent;
 					swap->n = value;
-					return swap;
+					return (swap);
 				}
 			}
 		}
