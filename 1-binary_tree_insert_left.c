@@ -1,7 +1,7 @@
 #include "binary_trees.h"
 
 /**
- * binary_tree_insert - inserts aq node as a left child of another node
+ * binary_tree_insert_left - inserts aq node as a left child of another node
  * @parent: a pointer to the node to insert the left child in
  * @value: the value to store in the new code
  * Return: NULL if parent is null of in case of failure or pointer to the
