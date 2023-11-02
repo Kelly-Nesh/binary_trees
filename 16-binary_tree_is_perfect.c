@@ -11,6 +11,7 @@ int height(binary_tree_t *tree);
 
 int binary_tree_is_perfect(const binary_tree_t *tree)
 {
+	int r ,l;
 
 	if (!tree)
 		return (0);
@@ -18,7 +19,13 @@ int binary_tree_is_perfect(const binary_tree_t *tree)
 		return (0);
 	if (height(tree->left) != height(tree->right))
 		return (0);
-	return (1);
+	if (!(tree->left) && !(tree->right))
+			return (1);
+	l = binary_tree_is_perfect(tree->left);
+	r = binary_tree_is_perfect(tree->right);
+	if (l == 1 && r == 1)
+		return (1);
+	return (0);
 }
 /**
  * height - get the height of binary tree
